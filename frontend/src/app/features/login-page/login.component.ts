@@ -6,9 +6,9 @@ import {MatButton} from "@angular/material/button";
   imports: [
     MatButton
   ],
-  templateUrl: './login-page.component.html',
-  styleUrl: './login-page.component.scss'
+  templateUrl: './login.component.html',
+  styleUrl: './login.component.scss'
 })
-export class LoginPageComponent {
+export class LoginComponent {
 
 }
