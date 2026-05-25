@@ -1,12 +1,14 @@
 @use '@angular/material' as mat;
 
 .page-container {
+	background-color: bisque;
 	width: 100vw;
 	height: 100vh;
 	display: flex;
 	align-items: center;
 	justify-content: center;
 	.login-container {
+		background-color: white;
 		min-width: 340px;
 		min-height: 275px;
 		border-radius: 8px;
