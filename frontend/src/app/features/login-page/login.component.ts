@@ -1,10 +1,12 @@
 import {Component} from '@angular/core';
-import {MatButton} from "@angular/material/button";
+import {MatFormField, MatInput, MatLabel} from "@angular/material/input";
 
 @Component({
   selector: 'app-login-page',
   imports: [
-    MatButton
+    MatFormField,
+    MatInput,
+    MatLabel
   ],
   templateUrl: './login.component.html',
   styleUrl: './login.component.scss'
