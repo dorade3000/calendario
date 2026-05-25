@@ -1,8 +1,6 @@
 @use '@angular/material' as mat;
 
 .page-container {
-	background-color: bisque;
-	width: 100vw;
 	height: 100vh;
 	display: flex;
 	align-items: center;
@@ -12,7 +10,8 @@
 		flex-direction: column;
 		align-items: center;
 		.login-container {
-			background-color: white;
+			background: var(--mat-sys-surface-container);
+			color: var(--mat-sys-on-surface);
 			min-width: 340px;
 			min-height: 275px;
 			border-radius: 8px;
@@ -21,7 +20,6 @@
 			flex-direction: column;
 			align-items: center;
 			justify-content: space-evenly;
-
 			.login-form {
 				display: flex;
 				flex-direction: column;
