@@ -35,7 +35,13 @@
 									filled-container-color: transparent
 					));
 				}
-
+			}
+			.sign-in-button {
+				@include mat.button-overrides((
+								filled-container-height: 48px,
+								filled-label-text-size: 16px,
+								filled-container-shape: var(--mat-sys-corner-small)
+				));
 			}
 		}
 		.sign-up-link {
