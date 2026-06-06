@@ -1,4 +1,4 @@
-import {Component} from '@angular/core';
+import {Component, ChangeDetectionStrategy} from '@angular/core';
 import {MatFormField, MatInput, MatLabel} from "@angular/material/input";
 import {MatButton, MatButtonModule} from "@angular/material/button";
 
@@ -12,6 +12,7 @@ import {MatButton, MatButtonModule} from "@angular/material/button";
     MatButtonModule
   ],
   templateUrl: './login.component.html',
+  changeDetection: ChangeDetectionStrategy.Eager,
   styleUrl: './login.component.scss'
 })
 export class LoginComponent {
