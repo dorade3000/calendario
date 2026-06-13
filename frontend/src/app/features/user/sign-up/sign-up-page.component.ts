@@ -1,8 +1,9 @@
-import {Component, computed} from '@angular/core';
+import {Component, computed, inject} from '@angular/core';
 import {MatFormField, MatInput, MatLabel} from "@angular/material/input";
 import { FormControl, ReactiveFormsModule } from '@angular/forms';
 import {toSignal} from "@angular/core/rxjs-interop";
 import {MatButton} from "@angular/material/button";
+import {UserService} from "../user.service";
 
 @Component({
   selector: 'app-sign-up',
@@ -17,9 +18,10 @@ import {MatButton} from "@angular/material/button";
   styleUrl: './sign-up-page.component.scss'
 })
 export class SignUpPageComponent {
+  userService: UserService = inject(UserService);
 
-  usernameForm: FormControl = new FormControl('');
-  passwordForm: FormControl = new FormControl('');
+  usernameForm: FormControl<string> = new FormControl<string>('');
+  passwordForm: FormControl<string> = new FormControl<string>('');
 
   private readonly usernameInput = toSignal(this.usernameForm.valueChanges);
   private readonly passwordInput = toSignal(this.passwordForm.valueChanges);
@@ -29,6 +31,17 @@ export class SignUpPageComponent {
   });
 
   onSignUpClick() {
-
+    console.error('signUpClicked', this.usernameInput(), this.passwordInput());
+    this.userService.register({
+      username: this.usernameInput(),
+      password: this.passwordInput()
+    }).subscribe({
+      next: value => {
+        console.error('registered user')
+      },
+      error: err => {
+        console.error('registering user didnt work');
+      }
+    })
   }
 }

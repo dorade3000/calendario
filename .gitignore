@@ -1,3 +1,5 @@
 /target/*
 /.idea/calendario.iml
 /.idea/modules.xml
+/backend/target/*
+/backend/calendario.iml
